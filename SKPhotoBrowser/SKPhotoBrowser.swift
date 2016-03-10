@@ -1026,6 +1026,19 @@ public class SKPhotoBrowser: UIViewController, UIScrollViewDelegate {
         return toolBar.alpha == 0.0
     }
     
+    public func getCurrentImageView() -> UIImageView {
+        let photo = photoAtIndex(currentPageIndex)
+        
+        return resizableImageView
+    }
+    
+    public func getCurrentImage() -> UIImage {
+        
+        let photo = photoAtIndex(currentPageIndex)
+        
+        return photo.underlyingImage
+    }
+    
     // MARK: - Button
     public func closeButtonPressed(sender: UIButton) {
         if currentPageIndex == initialPageIndex {
